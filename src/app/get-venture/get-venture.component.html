@@ -1,0 +1,63 @@
+<br>
+<br>
+<div class="col-md-6 offset-md-3">
+    <h4>Get Venture Event</h4>
+    
+    <form #getVen="ngForm" (ngSubmit) = "onSubmit()">
+
+        <div class="form-group" [class.has-error]="nam.invalid && nam.touched">
+            <label for="ventureid" class="control_label">ID</label>
+            <input type= number class="form-control" id= "ventureid"
+            required [(ngModel)] ="venture.ventureid" name="ventureid" #nam="ngModel">
+           <span class="help-block"
+            *ngIf="nam.invalid && nam.touched">
+            <small style="color: red;">Id is required!</small></span>
+
+        </div>
+        <br>
+        <br>
+
+        <button class = "btn btn-success" type = "submit" [disabled]="getVen.invalid">Save & Submit</button>
+       
+    </form>
+
+    <br>
+    <div *ngIf="submitted">
+        <h5>{{message}}</h5>
+    </div>
+
+    <h5>{{error}}</h5>
+
+   <br>
+    
+
+    <br>
+    <br>
+<table mdbTable mdbTableScroll scrollY="true" maxHeight="700" bordered="true">
+
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">NAME</th>
+            <th scope="col">DOMAIN</th>
+            <th scope="col">REVENUE_ESTIMATION</th>
+        </tr>
+
+    </thead>
+
+    <tbody>
+             <tr>
+
+                <td>{{venture.ventureid}}</td>
+                <td>{{venture.name}}</td>
+                <td>{{venture.domain}}</td>
+                <td>{{venture.revenue_estimation}}</td>
+            </tr> 
+    </tbody>
+</table>
+    <br>
+<br>
+
+
+
+</div>

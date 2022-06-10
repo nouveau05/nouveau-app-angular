@@ -1,0 +1,33 @@
+
+<br>
+<br>
+<div class="col-md-6 offset-md-3">
+    <h4>Delete Venture Event</h4>
+    
+    <form #delVen="ngForm" (ngSubmit) = "onSubmit()">
+
+        <div class="form-group" [class.has-error]="nam.invalid && nam.touched">
+            <label for="ventureid" class="control_label">ID</label>
+            <input type= number class="form-control" id= "ventureid"
+            required [(ngModel)] ="venture.ventureid" name="ventureid" #nam="ngModel">
+           <span class="help-block"
+            *ngIf="nam.invalid && nam.touched">
+            <small style="color: red;">Id is required!</small></span>
+
+        </div>
+        <br>
+        <br>
+
+        <button class = "btn btn-success" type = "submit" [disabled]="delVen.invalid">Save & Submit</button>
+       
+    </form>
+
+    <br>
+    <div *ngIf="submitted">
+        <h5>{{message}}</h5>
+    </div>
+
+    <h5>{{error}}</h5>
+
+   <br>
+    

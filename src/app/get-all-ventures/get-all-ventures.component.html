@@ -1,0 +1,30 @@
+<h2>Nouveau Venture Data</h2>
+<br>
+
+<br>
+
+<button (click)="onSubmit()" class="btn btn-success">Fetch Nouveau Venture Data</button>
+<br>
+<br>
+<br>
+<table mdbTable mdbTableScroll scrollY="true" maxHeight="700" bordered="true">
+
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">NAME</th>
+            <th scope="col">DOMAIN</th>
+            <th scope="col">REVENUE_ESTIMATION</th>
+        </tr>
+
+    </thead>
+
+    <tbody>
+            <tr *ngFor="let ref of ventures">
+                <td>{{ref.ventureid}}</td>
+                <td>{{ref.name}}</td>
+                <td>{{ref.domain}}</td>
+                <td>{{ref.revenue_estimation}}</td>
+            </tr> 
+    </tbody>
+</table>
